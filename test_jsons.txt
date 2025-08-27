@@ -1,0 +1,59 @@
+{
+  "fullName": "Grzegorz Brzęczyszczykiewicz",
+  "birthDate": "10-02-1920",
+  "customerAddress": {
+    "postalCode": "01-201",
+    "address": "Chrząszczyświebodzice 12",
+    "city": "Łękołody"
+  }
+}
+
+{
+  "fullName": "Maria Bryza-Brzęczyszczykiewicz",
+  "birthDate": "10-02-1925",
+  "customerAddress": {
+    "postalCode": "01-201",
+    "address": "Chrząszczyświebodzice 12",
+    "city": "Kikuty"
+  }
+}
+
+{
+  "fullName": "Jhon Snow",
+  "birthDate": "10-02-1985",
+  "customerAddress": {
+    "postalCode": "11-211",
+    "address": "Winterfell 12",
+    "city": "Pacanów"
+  }
+}
+
+{
+  "fullName": "Koziołek Matołek",
+  "birthDate": "10-02-1985",
+  "customerAddress": {
+    "postalCode": "11-211",
+    "address": "Bajkowa 2",
+    "city": "Pacanów"
+  }
+}
+
+{
+  "fullName": "Emilly from Paris",
+  "birthDate": "23-03-1975",
+  "customerAddress": {
+    "postalCode": "11-111",
+    "address": "Tower 2",
+    "city": "Chicago"
+  }
+}
+
+{
+  "fullName": "All not Capone",
+  "birthDate": "10-02-1955",
+  "customerAddress": {
+    "postalCode": "11-112",
+    "address": "Tower Plazza 12",
+    "city": "Chicago"
+  }
+}
