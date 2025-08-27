@@ -2,8 +2,6 @@ package org.bootcamp2025_ey.wlad.bootcamp2025_training.model;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 public class Policy extends BaseEntity {
 
