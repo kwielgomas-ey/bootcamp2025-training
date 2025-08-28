@@ -31,4 +31,12 @@ public class Policy extends BaseEntity {
     public void setInsured(Insured insured) {
         this.insured = insured;
     }
+
+    public List<Coverage> getCoverages() {
+        return coverages;
+    }
+
+    public void setCoverages(List<Coverage> coverages) {
+        this.coverages = coverages;
+    }
 }
