@@ -25,4 +25,8 @@ public class PolicyService {
         insuredsRepository.save(policy.getInsured());
         return policyRepository.save(policy);
     }
+
+    public List<Policy> getPoliciesInCity(String city) {
+        return policyRepository.findByInsuredCustomerAddressCity(city);
+    }
 }

@@ -26,4 +26,9 @@ public class PolicyController {
     public Policy createPolicy(@RequestBody Policy policy){
         return policyService.createPolicy(policy);
     }
+
+    @GetMapping("/city/{city}")
+    public List<Policy> getPoliciesInCity(@PathVariable String city){
+        return policyService.getPoliciesInCity(city);
+    }
 }
