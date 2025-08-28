@@ -1,9 +1,6 @@
 package org.bootcamp2025_ey.wlad.bootcamp2025_training.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
@@ -13,6 +10,9 @@ public class Coverage extends BaseEntity{
     private String name;
     private String description;
     private BigDecimal sumCovered;
+
+    @ManyToOne
+    private Policy policy;
 
     public String getName() {
         return name;
