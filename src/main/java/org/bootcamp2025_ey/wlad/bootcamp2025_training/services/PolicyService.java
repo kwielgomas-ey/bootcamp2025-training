@@ -1,5 +1,6 @@
 package org.bootcamp2025_ey.wlad.bootcamp2025_training.services;
 
+import org.bootcamp2025_ey.wlad.bootcamp2025_training.model.Insured;
 import org.bootcamp2025_ey.wlad.bootcamp2025_training.model.Policy;
 import org.bootcamp2025_ey.wlad.bootcamp2025_training.repository.InsuredsRepository;
 import org.bootcamp2025_ey.wlad.bootcamp2025_training.repository.PolicyRepository;
@@ -21,9 +22,17 @@ public class PolicyService {
         return policyRepository.findAll();
     }
 
-    public Policy createPolicy(Policy policy) {
-        insuredsRepository.save(policy.getInsured());
-        return policyRepository.save(policy);
+    public Policy createPolicy(Policy policy, Long id) {
+        Insured insured = insuredsRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Insured not found"));
+        policy.setInsured(insured);
+
+        Policy savedPolicy = policyRepository.save(policy);
+
+        insured.getPolicies().add(savedPolicy);
+        insuredsRepository.save(insured);
+
+        return savedPolicy;
     }
 
     public List<Policy> getPoliciesInCity(String city) {

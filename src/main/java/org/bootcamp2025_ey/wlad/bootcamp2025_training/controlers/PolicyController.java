@@ -21,10 +21,10 @@ public class PolicyController {
         return policyService.getAllPolicies();
     }
 
-    @PostMapping
+    @PostMapping("/insured/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public Policy createPolicy(@RequestBody Policy policy){
-        return policyService.createPolicy(policy);
+    public Policy createPolicy(@RequestBody Policy policy, @PathVariable Long id){
+        return policyService.createPolicy(policy, id);
     }
 
     @GetMapping("/city/{city}")
