@@ -2,6 +2,8 @@ package org.bootcamp2025_ey.wlad.bootcamp2025_training.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Policy extends BaseEntity {
 
@@ -10,6 +12,9 @@ public class Policy extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "insured_id")
     private Insured insured;
+
+    @OneToMany(mappedBy = "policy")
+    List<Coverage> coverages;
 
     public String getPolicyNumber() {
         return policyNumber;
@@ -25,5 +30,13 @@ public class Policy extends BaseEntity {
 
     public void setInsured(Insured insured) {
         this.insured = insured;
+    }
+
+    public List<Coverage> getCoverages() {
+        return coverages;
+    }
+
+    public void setCoverages(List<Coverage> coverages) {
+        this.coverages = coverages;
     }
 }

@@ -1,5 +1,6 @@
 package org.bootcamp2025_ey.wlad.bootcamp2025_training.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.LinkedHashSet;
@@ -7,11 +8,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "insureds")
-public class Insured {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class Insured extends BaseEntity{
 
     @Column(name = "full_name", nullable = false, length = 120)
     private String fullName;
@@ -22,6 +19,7 @@ public class Insured {
     private CustomerAddress customerAddress;
 
     @OneToMany(mappedBy = "insured", orphanRemoval = true)
+    @JsonIgnore
     private Set<Policy> policies = new LinkedHashSet<>();
 
     public Insured() {
@@ -31,14 +29,6 @@ public class Insured {
         this.fullName = fullName;
         this.birthDate = birthDate;
         this.customerAddress = customerAddress;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getFullName() {

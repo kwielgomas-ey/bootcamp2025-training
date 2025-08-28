@@ -1,30 +1,18 @@
 package org.bootcamp2025_ey.wlad.bootcamp2025_training.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
 @Entity
-public class Coverage {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class Coverage extends BaseEntity{
 
     private String name;
     private String description;
     private BigDecimal sumCovered;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @ManyToOne
+    private Policy policy;
 
     public String getName() {
         return name;
